@@ -1,10 +1,13 @@
 filetype plugin on
 
+set nocompatible   " Disable vi-compatibility
+
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+
 call pathogen#infect()
 call pathogen#helptags()
 
 syntax on
-set nocompatible   " Disable vi-compatibility
 set number
 set backupdir=~/.vim/backup,.
 set directory=~/.vim/backup,.
