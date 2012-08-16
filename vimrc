@@ -2,6 +2,8 @@ filetype plugin on
 
 set nocompatible   " Disable vi-compatibility
 
+nmap , \
+
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 
 call pathogen#infect()
