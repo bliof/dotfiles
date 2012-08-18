@@ -82,6 +82,9 @@ autocmd FileType haml set tabstop=2
 autocmd FileType haml set shiftwidth=2
 autocmd FileType haml set expandtab
 
+autocmd Filetype java setlocal omnifunc=javacomplete#Complete
+autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
+
 let g:miniBufExplMapWindowNavVim = 1 
 
 let g:SuperTabDefaultCompletionType = "context"
