@@ -82,9 +82,6 @@ autocmd FileType haml set tabstop=2
 autocmd FileType haml set shiftwidth=2
 autocmd FileType haml set expandtab
 
-autocmd Filetype java setlocal omnifunc=javacomplete#Complete
-autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
-
 let g:miniBufExplMapWindowNavVim = 1 
 
 let g:SuperTabDefaultCompletionType = "context"
@@ -102,7 +99,4 @@ let g:C_FormatDate = '%d/%m/%y'
 
 " Setup snipMate
 let g:snippets_dir = $HOME . '/.vim/bundle/bliof/snippets/'
-
-autocmd Filetype java setlocal omnifunc=javacomplete#Complete
-autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
 

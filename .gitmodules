@@ -7,9 +7,6 @@
 [submodule "vim/bundle/minibufexpl"]
 	path = vim/bundle/minibufexpl
 	url = https://github.com/fholgado/minibufexpl.vim.git
-[submodule "vim/bundle/perl-support"]
-	path = vim/bundle/perl-support
-	url = https://github.com/vim-scripts/perl-support.vim.git
 [submodule "vim/bundle/vim-notes"]
 	path = vim/bundle/vim-notes
 	url = https://github.com/xolox/vim-notes.git
@@ -40,6 +37,3 @@
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "vim/bundle/javacomplete"]
-	path = vim/bundle/javacomplete
-	url = https://github.com/vim-scripts/javacomplete.git
