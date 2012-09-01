@@ -49,7 +49,6 @@
 
 use strict;
 use warnings;
-use utf8;
 
 == Comments.file description pm == map:chpm, sc:d, start, noindent ==
 #
