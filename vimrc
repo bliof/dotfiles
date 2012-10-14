@@ -77,6 +77,7 @@ autocmd FileType yaml set expandtab
 
 autocmd FileType ruby set tabstop=2
 autocmd FileType ruby set shiftwidth=2
+autocmd FileType ruby set expandtab
 
 autocmd FileType haml set tabstop=2
 autocmd FileType haml set shiftwidth=2
