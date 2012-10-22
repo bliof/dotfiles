@@ -4,7 +4,7 @@ unbind C-b
 
 setw -g mode-keys vi
 
-#bind-key C-w last-window
+# picking new window
 bind-key -n C-w select-window -t :.+
 
 # ensure that our $TERM value specifies 256 colors
