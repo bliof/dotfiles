@@ -2,19 +2,24 @@
 set -g prefix C-a
 unbind C-b
 
-bind-key C-w last-window
+setw -g mode-keys vi
+
+#bind-key C-w last-window
+bind-key -n C-w select-window -t :.+
 
 # ensure that our $TERM value specifies 256 colors
 set-option -g default-terminal "screen-256color"
 
-# start window indexing at one instead of zero
-set-option -g base-index 1
-
 # Allows for faster key repetition
 set -s escape-time 0
 
+# start window indexing at one instead of zero
+set-option -g renumber-windows on
+set-option -g base-index 1
+
 # Set status bar
 set-option -g status-position top
+set -g status-justify centre
 set-option -g status-left '#[fg=colour240]#S:#I |'
 set-window-option -g window-status-format '#[fg=colour240]#F#[fg=default]#W#[fg=colour240]#F'
 set-window-option -g window-status-current-format '#[fg=colour240]#F#[fg=default]#W#[fg=colour240]#F'
@@ -22,6 +27,7 @@ set-option -g status-right '#[fg=colour240]| %a %b %d %I:%M %p'
 set-option -g status-bg colour234
 set-option -g status-fg colour007
 set-window-option -g window-status-current-fg colour208
+
 
 # Rather than constraining window size to the maximum size of any client 
 # connected to the *session*, constrain window size to the maximum size of any 
@@ -51,3 +57,4 @@ bind k select-pane -U
 bind l select-pane -R
 
 set -g history-limit 100000
+
