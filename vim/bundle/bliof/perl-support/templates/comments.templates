@@ -68,9 +68,20 @@ use warnings;
 #     REVISION: ---
 #===============================================================================
 
+package |FILENAME|;
+
 use strict;
 use warnings;
- 
+
+sub new {
+    my $class = shift;
+    my $self = {}; 
+    bless ($self, $class);
+    return $self;
+}
+
+1;
+
 == Comments.file description t == map:cht, sc:d, start, noindent ==
 #
 #===============================================================================
