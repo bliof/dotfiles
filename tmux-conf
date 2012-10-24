@@ -58,3 +58,6 @@ bind l select-pane -R
 
 set -g history-limit 100000
 
+#fixes the usage of arrow keys in vim
+set-window-option -g xterm-keys on
+
