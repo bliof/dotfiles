@@ -56,39 +56,13 @@ function handle_existing() {
 	fi
 }
 
-function change_bashrc() {
-	bash_file=~/.bashrc
+function create_ln() {
+	file=$1
+	link=$2
 
-	if ask_for_confirmation "Do you want to change $bash_file?"; then
-		handle_existing "$bash_file"
-		ln -s "$BASEDIR/bashrc" $bash_file
-	fi
-}
-
-function change_tmux_conf() {
-	tmux_file=~/.tmux.conf
-
-	if ask_for_confirmation "Do you want to change $tmux_file?"; then
-		handle_existing "$tmux_file"
-		ln -s "$BASEDIR/tmux-conf" $tmux_file
-	fi
-}
-
-function change_vimrc() {
-	vimrc_file=~/.vimrc
-
-	if ask_for_confirmation "Do you want to change $vimrc_file?"; then
-		handle_existing "$vimrc_file"
-		ln -s "$BASEDIR/vimrc" $vimrc_file
-	fi
-}
-
-function change_vim() {
-	vim_dir=~/.vim
-
-	if ask_for_confirmation "Do you want to change $vim_dir?"; then
-		handle_existing "$vim_dir"
-		ln -s "$BASEDIR/vim" $vim_dir
+	if ask_for_confirmation "Do you want to change $link?"; then
+		handle_existing "$link"
+		ln -s "$BASEDIR/$file" $link
 	fi
 }
 
@@ -98,9 +72,11 @@ function change_git_global_ignore() {
 	fi
 }
 
-change_bashrc
-change_tmux_conf
-change_vimrc
-change_vim
+create_ln "bashrc" ~/.bashrc
+create_ln "tmux-conf" ~/.tmux-conf
+create_ln "vimrc" ~/.vimrc
+create_ln "vim" ~/.vim
+create_ln "perltidyrc" ~/.perltidyrc
+
 change_git_global_ignore
 
