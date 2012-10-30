@@ -20,10 +20,10 @@ set-option -g base-index 1
 # Set status bar
 set-option -g status-position top
 set -g status-justify centre
-set-option -g status-left '#[fg=colour240]#S:#I |'
+set-option -g status-left '#[fg=yellow]#S:#I |'
 set-window-option -g window-status-format '#[fg=colour240]#F#[fg=default]#W#[fg=colour240]#F'
 set-window-option -g window-status-current-format '#[fg=colour240]#F#[fg=default]#W#[fg=colour240]#F'
-set-option -g status-right '#[fg=colour240]| %a %b %d %I:%M %p'
+set-option -g status-right '#[fg=yellow]| %a %b %d %I:%M %p'
 set-option -g status-bg colour234
 set-option -g status-fg colour007
 set-window-option -g window-status-current-fg colour208
