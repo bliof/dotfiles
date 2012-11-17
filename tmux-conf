@@ -25,7 +25,6 @@ set-option -g status-bg colour234
 set-option -g status-fg colour007
 set-window-option -g window-status-current-fg colour208
 
-
 # Rather than constraining window size to the maximum size of any client 
 # connected to the *session*, constrain window size to the maximum size of any 
 # client connected to *that window*. Much more reasonable.

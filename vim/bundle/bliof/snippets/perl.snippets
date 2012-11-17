@@ -1,3 +1,31 @@
+snippet con
+	context '${1}' => sub {
+		${2}
+	};
+snippet context
+	context '${1}' => sub {
+		${2}
+	};
+snippet describe
+	describe '${1}' => sub {
+		${2}
+	};
+snippet desc
+	describe '${1}' => sub {
+		${2}
+	};
+snippet it
+	it '${1}' => sub {
+		${2}
+	};
+snippet they
+	they '${1}' => sub {
+		${2}
+	};
+snippet ss
+	sub {
+		${1}
+	}
 # #!/usr/bin/perl
 snippet #!
 	#!/usr/bin/perl
@@ -71,7 +99,7 @@ snippet xfor
 	${1:expression} for @${2:array};${3}
 # Foreach Loop
 snippet for
-	foreach my $${1:x} (@${2:array}) {
+	for my $${1:x} (@${2:array}) {
 		${3:# body...}
 	}
 # Foreach Loop One-line

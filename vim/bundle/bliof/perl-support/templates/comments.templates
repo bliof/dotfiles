@@ -34,7 +34,7 @@
 #
 #        USAGE: ./|FILENAME|  
 #
-#  DESCRIPTION: <CURSOR>
+#  DESCRIPTION:
 #
 #      OPTIONS: ---
 # REQUIREMENTS: ---
@@ -42,7 +42,7 @@
 #        NOTES: ---
 #       AUTHOR: |AUTHOR| (|AUTHORREF|), |EMAIL|
 # ORGANIZATION: |ORGANIZATION|
-#      VERSION: 1.0
+#      VERSION: 0.1
 #      CREATED: |DATE| |TIME|
 #     REVISION: ---
 #===============================================================================
@@ -50,25 +50,27 @@
 use strict;
 use warnings;
 
+<CURSOR>
+
 == Comments.file description pm == map:chpm, sc:d, start, noindent ==
 #
 #===============================================================================
 #
 #         FILE: |FILENAME|
 #
-#  DESCRIPTION: <CURSOR>
+#  DESCRIPTION:
 #
 #        FILES: ---
 #         BUGS: ---
 #        NOTES: ---
 #       AUTHOR: |AUTHOR| (|AUTHORREF|), |EMAIL|
 # ORGANIZATION: |ORGANIZATION|
-#      VERSION: 1.0
+#      VERSION: 0.1
 #      CREATED: |DATE| |TIME|
 #     REVISION: ---
 #===============================================================================
 
-package |FILENAME|;
+package |FILENAME|<CURSOR>;
 
 use strict;
 use warnings;
@@ -88,14 +90,14 @@ sub new {
 #
 #         FILE: |FILENAME|
 #
-#  DESCRIPTION: <CURSOR>
+#  DESCRIPTION:
 #
 #        FILES: ---
 #         BUGS: ---
 #        NOTES: ---
 #       AUTHOR: |AUTHOR| (|AUTHORREF|), |EMAIL|
 # ORGANIZATION: |ORGANIZATION|
-#      VERSION: 1.0
+#      VERSION: 0.1
 #      CREATED: |DATE| |TIME|
 #     REVISION: ---
 #===============================================================================
@@ -103,8 +105,7 @@ sub new {
 use strict;
 use warnings;
 
-use Test::More tests => 1;                      # last test to print
-
+<CURSOR>
 
 == Comments.file description pod == map:chpo, sc:d, start ==
 #
