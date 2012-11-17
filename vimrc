@@ -83,7 +83,20 @@ autocmd FileType haml set tabstop=2
 autocmd FileType haml set shiftwidth=2
 autocmd FileType haml set expandtab
 
-let g:miniBufExplMapWindowNavVim = 1 
+function! s:FixWhitespace(line1,line2)
+    let l:save_cursor = getpos(".")
+    silent! execute ':' . a:line1 . ',' . a:line2 . 's/\s\+$//'
+    call setpos('.', l:save_cursor)
+endfunction
+
+" Run :FixWhitespace to remove end of line white space.
+command! -range=% FixWhitespace call <SID>FixWhitespace(<line1>,<line2>)
+
+"======================================================================
+" Plugins config
+"======================================================================
+
+let g:miniBufExplMapWindowNavVim = 1
 
 let g:SuperTabDefaultCompletionType = "context"
 
@@ -94,16 +107,12 @@ let g:encodingOptions = ['cp1251']
 " Setup snipMate
 let g:snippets_dir = $HOME . '/.vim/bundle/bliof/snippets/'
 
-function! s:FixWhitespace(line1,line2)
-    let l:save_cursor = getpos(".")
-    silent! execute ':' . a:line1 . ',' . a:line2 . 's/\s\+$//'
-    call setpos('.', l:save_cursor)
-endfunction
-
-" Run :FixWhitespace to remove end of line white space.
-command! -range=% FixWhitespace call <SID>FixWhitespace(<line1>,<line2>)
-
+let g:template_dir = $HOME . '/.vim/bundle/bliof/templates/'
+let g:user = 'Aleksandar Ivanov'
+let g:email = 'aivanov92@gmail.com'
+let g:templates_no_autocmd = 0
 
 nmap <leader>j :SplitjoinSplit<cr>
 nmap <leader>k :SplitjoinJoin<cr>
+
 
