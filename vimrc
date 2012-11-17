@@ -91,13 +91,6 @@ let g:notes_directory = '~/Documents/notes'
 
 let g:encodingOptions = ['cp1251']
 
-" Setup perl-support
-let g:Perl_LocalTemplateFile = $HOME . "/.vim/bundle/bliof/perl-support/templates/Templates"
-
-" Setup c-support
-let g:C_LocalTemplateFile = $HOME . "/.vim/bundle/bliof/c-support/templates/Templates"
-let g:C_FormatDate = '%d/%m/%y'
-
 " Setup snipMate
 let g:snippets_dir = $HOME . '/.vim/bundle/bliof/snippets/'
 
