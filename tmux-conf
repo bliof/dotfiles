@@ -6,7 +6,7 @@ setw -g mode-keys vi
 
 # ensure that our $TERM value specifies 256 colors
 set-option -g default-terminal "screen-256color"
-
+set-option -g xterm-keys on
 # Allows for faster key repetition
 set -s escape-time 0
 
