@@ -71,6 +71,8 @@ autocmd FileType perl set autowrite
 autocmd FileType perl noremap <Leader>kk :!perldoc %<CR>
 autocmd FileType perl noremap K :!echo <cWORD> <cword> <bar> perl -e '$line = <STDIN>; if ($line =~ /(\w+::\w+)/){exec("perldoc $1")} elsif($line =~ /(\w+)/){exec "perldoc -f $1 <bar><bar> perldoc $1"}'<cr><cr>
 
+autocmd FileType perl set expandtab
+
 autocmd FileType yaml set tabstop=2
 autocmd FileType yaml set shiftwidth=2
 autocmd FileType yaml set expandtab
