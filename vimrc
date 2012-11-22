@@ -25,6 +25,7 @@ set showmode
 set t_Co=256
 
 colorscheme aldmeris
+"colorscheme bluelight
 "set background=light
 "colorscheme solarized
 "let g:solarized_termcolors=256
