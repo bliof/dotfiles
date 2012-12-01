@@ -107,12 +107,11 @@ let g:notes_directory = '~/Documents/notes'
 
 let g:encodingOptions = ['cp1251']
 
-" Setup snipMate
 let g:snippets_dir = $HOME . '/.vim/bundle/bliof/snippets/'
 
 let g:template_dir = $HOME . '/.vim/bundle/bliof/templates/'
-let g:user = 'Aleksandar Ivanov'
-let g:email = 'aivanov92@gmail.com'
+let g:user = substitute(system('git config user.name'), '\%x00', '', 'g')
+let g:email = substitute(system('git config user.email'), '\%x00', '', 'g')
 let g:templates_no_autocmd = 0
 
 nmap <leader>j :SplitjoinSplit<cr>
