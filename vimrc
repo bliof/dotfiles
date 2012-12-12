@@ -106,3 +106,6 @@ let g:templates_no_autocmd = 0
 nmap <leader>j :SplitjoinSplit<cr>
 nmap <leader>k :SplitjoinJoin<cr>
 
+au InsertEnter * match Error /\s\+\%#\@<!$/
+au InsertLeave * match Error /\s\+$/
+
