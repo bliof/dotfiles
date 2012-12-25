@@ -18,58 +18,58 @@ BASEDIR=$(dirname $0 | xargs readlink -f)
 args=$(getopt f $*)
 force_delete=false
 if [[ $args =~ '-f' ]]; then
-	force_delete=true
+    force_delete=true
 fi
 
 
 function ask_for_confirmation() {
-	read -p "$1 [y/n]: " -n 1 -r choice
+    read -p "$1 [y/N]: " -n 1 -r choice
 
-	if [[ $choice == "" ]]; then
-		return 1
-	fi
+    if [[ $choice == "" ]]; then
+        return 1
+    fi
 
-	echo
-	if [[ $choice =~ ^[Yy]$ ]]; then
-		return 0
-	else 
-		return 1
-	fi
+    echo
+    if [[ $choice =~ ^[Yy]$ ]]; then
+        return 0
+    else 
+        return 1
+    fi
 }
 
 function handle_existing() {
-	if [[ -f $1 ]]; then
-		if $force_delete; then
-			rm "$1"
-		else 
-			mv --backup=numbered "$1" "$1.old"
-		fi
-		return
-	fi
+    if [[ -f $1 ]]; then
+        if $force_delete; then
+            rm "$1"
+        else 
+            mv --backup=numbered "$1" "$1.old"
+        fi
+        return
+    fi
 
-	if [[ -d $1 ]]; then
-		if ! $force_delete; then
-			cp -r --backup=numbered "$1" "$1.old"
-		fi
-		rm -r "$1"
-		return
-	fi
+    if [[ -d $1 ]]; then
+        if ! $force_delete; then
+            cp -r --backup=numbered "$1" "$1.old"
+        fi
+        rm -r "$1"
+        return
+    fi
 }
 
 function create_ln() {
-	file=$1
-	link=$2
+    file=$1
+    link=$2
 
-	if ask_for_confirmation "Do you want to change $link?"; then
-		handle_existing "$link"
-		ln -s "$BASEDIR/$file" $link
-	fi
+    if ask_for_confirmation "Do you want to change $link?"; then
+        handle_existing "$link"
+        ln -s "$BASEDIR/$file" $link
+    fi
 }
 
 function change_git_global_ignore() {
-	if ask_for_confirmation "Do you want to change git's core.excludesfile?"; then
-		git config --global core.excludesfile "$BASEDIR/git-global-ignore"
-	fi
+    if ask_for_confirmation "Do you want to change git's core.excludesfile?"; then
+        git config --global core.excludesfile "$BASEDIR/git-global-ignore"
+    fi
 }
 
 create_ln "bashrc" ~/.bashrc
