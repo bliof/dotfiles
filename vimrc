@@ -21,7 +21,7 @@ set smarttab
 set complete-=i
 set pastetoggle=<F4>
 set t_Co=256
-set foldmethod=marker	
+set foldmethod=marker
 
 set shiftwidth=4
 set softtabstop=4
@@ -65,7 +65,7 @@ cmap w!! %!sudo tee > /dev/null %
 augroup FileTypeOptions
     autocmd!
 
-    autocmd FileType c,cpp,cs,java setlocal et cin
+    autocmd FileType c,cpp,cs,java,javascript setlocal et
     autocmd FileType yaml,haml,ruby setlocal et sw=2 sts=2
     autocmd FileType vim,sh,perl,python setlocal et
     autocmd FileType html,xhmtl,tt2html setlocal et
