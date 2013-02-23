@@ -25,7 +25,7 @@
 --no-opening-anonymous-sub-brace-on-new-line
 --no-brace-left-and-indent
 
---blanks-before-comments
+--noblanks-before-comments
 --blank-lines-before-subs=1
 --blanks-before-blocks
 --maximum-consecutive-blank-lines=1
