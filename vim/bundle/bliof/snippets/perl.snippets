@@ -19,30 +19,6 @@ snippet #==
 snippet #=
 	#===============================================================================
 	${1}
-snippet con
-	context '${1}' => sub {
-		${2}
-	};
-snippet context
-	context '${1}' => sub {
-		${2}
-	};
-snippet describe
-	describe '${1}' => sub {
-		${2}
-	};
-snippet desc
-	describe '${1}' => sub {
-		${2}
-	};
-snippet it
-	it '${1}' => sub {
-		${2}
-	};
-snippet they
-	they '${1}' => sub {
-		${2}
-	};
 snippet ss
 	sub {
 		${1}
@@ -64,19 +40,16 @@ snippet if
 snippet ife
 	if (${1}) {
 		${2:# body...}
-	}
-	else {
+	} else {
 		${3:# else...}
 	}
 # Conditional if..elsif..else
 snippet ifee
 	if (${1}) {
 		${2:# body...}
-	}
-	elsif (${3}) {
+	} elsif (${3}) {
 		${4:# elsif...}
-	}
-	else {
+	} else {
 		${5:# else...}
 	}
 # Conditional One-line
@@ -95,6 +68,7 @@ snippet eval
 	eval {
 		${1:# do something risky...}
 	};
+
 	if ($@) {
 		${2:# handle failure...}
 	}
@@ -139,4 +113,4 @@ snippet cl
 # Read File
 snippet slurp
 	my $${1:var};
-	{ local $/ = undef; local *FILE; open FILE, "<${2:file}"; $$1 = <FILE>; close FILE }${3}
+	{ local $/ = undef; local *FILE; open FILE, '<', "${2:file}"; $$1 = <FILE>; close FILE }${3}
