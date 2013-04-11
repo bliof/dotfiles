@@ -31,10 +31,18 @@ snippet #==
 snippet #=
 	#===============================================================================
 	${1}
+snippet subtest
+	subtest '${1}' => sub {
+		${2}
+	};
+snippet st
+	subtest '${1}' => sub {
+		${2}
+	};
 snippet ss
 	sub {
 		${1}
-	}
+	};
 # #!/usr/bin/perl
 snippet #!
 	#!/usr/bin/perl
