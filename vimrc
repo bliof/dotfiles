@@ -26,6 +26,11 @@ set foldmethod=marker
 set shiftwidth=4
 set softtabstop=4
 
+" fixes vim and tmux background color problems
+if &term =~ '256color'
+    set t_ut=
+endif
+
 colorscheme aldmeris
 "colorscheme bluelight
 "set background=light
