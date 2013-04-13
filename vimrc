@@ -108,9 +108,6 @@ let g:user = substitute(system('git config user.name'), '\%x00', '', 'g')
 let g:email = substitute(system('git config user.email'), '\%x00', '', 'g')
 let g:templates_no_autocmd = 0
 
-nmap <leader>j :SplitjoinSplit<cr>
-nmap <leader>k :SplitjoinJoin<cr>
-
 au InsertEnter * match Error /\s\+\%#\@<!$/
 au InsertLeave * match Error /\s\+$/
 
