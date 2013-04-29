@@ -89,6 +89,9 @@ endfunction
 " Run :FixWhitespace to remove end of line white space.
 command! -range=% FixWhitespace call <SID>FixWhitespace(<line1>,<line2>)
 
+au InsertEnter * match Error /\s\+\%#\@<!$/
+au InsertLeave * match Error /\s\+$/
+
 "======================================================================
 " Plugins config
 "======================================================================
@@ -108,6 +111,6 @@ let g:user = substitute(system('git config user.name'), '\%x00', '', 'g')
 let g:email = substitute(system('git config user.email'), '\%x00', '', 'g')
 let g:templates_no_autocmd = 0
 
-au InsertEnter * match Error /\s\+\%#\@<!$/
-au InsertLeave * match Error /\s\+$/
+let g:vimroom_width = 120
+let g:vimroom_sidebar_height = 0
 

@@ -41,3 +41,6 @@
 [submodule "vim/bundle/vim-template"]
 	path = vim/bundle/vim-template
 	url = https://github.com/aperezdc/vim-template.git
+[submodule "vim/bundle/vimroom"]
+	path = vim/bundle/vimroom
+	url = https://github.com/mikewest/vimroom
