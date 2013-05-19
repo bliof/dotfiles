@@ -3,12 +3,12 @@
 # creates symlinks for the files in the repository in the
 # default location of the dotfiles
 #
-# usage: 
+# usage:
 #      ./clean_start # this will create a copy of the existing files
 #                      on the default locations
 #      ./clean_start -f # this will delete them
 #
-#      In both cases you will be asked if you want to make 
+#      In both cases you will be asked if you want to make
 #      certain change.
 #
 ######################################################################
@@ -32,7 +32,7 @@ function ask_for_confirmation() {
     echo
     if [[ $choice =~ ^[Yy]$ ]]; then
         return 0
-    else 
+    else
         return 1
     fi
 }
@@ -41,7 +41,7 @@ function handle_existing() {
     if [[ -f $1 ]]; then
         if $force_delete; then
             rm "$1"
-        else 
+        else
             mv --backup=numbered "$1" "$1.old"
         fi
         return
