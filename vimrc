@@ -98,6 +98,10 @@ map <leader>f :FufFile **/<CR>
 " Plugins config
 "======================================================================
 
+" opens nerdtree and moves the cursor to the current window
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
+
 let g:miniBufExplMapWindowNavVim = 1
 
 let g:SuperTabDefaultCompletionType = "context"
