@@ -71,7 +71,7 @@ augroup FileTypeOptions
     autocmd!
 
     autocmd FileType c,cpp,cs,java,javascript setlocal et
-    autocmd FileType yaml,haml,ruby setlocal et sw=2 sts=2
+    autocmd FileType yaml,haml,ruby,coffee setlocal et sw=2 sts=2
     autocmd FileType vim,sh,perl,python,r setlocal et
     autocmd FileType html,xhmtl,tt2html setlocal et
     autocmd FileType xml setlocal et sw=2 sts=2
