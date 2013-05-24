@@ -25,6 +25,7 @@ set foldmethod=marker
 
 set shiftwidth=4
 set softtabstop=4
+set backspace=indent,eol,start
 
 " fixes vim and tmux background color problems
 if &term =~ '256color'
@@ -119,4 +120,3 @@ let g:templates_no_autocmd = 0
 
 let g:vimroom_width = 120
 let g:vimroom_sidebar_height = 0
-
