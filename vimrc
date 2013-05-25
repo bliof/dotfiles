@@ -93,8 +93,6 @@ command! -range=% FixWhitespace call <SID>FixWhitespace(<line1>,<line2>)
 au InsertEnter * match Error /\s\+\%#\@<!$/
 au InsertLeave * match Error /\s\+$/
 
-map <leader>f :FufFile **/<CR>
-
 "======================================================================
 " Plugins config
 "======================================================================
@@ -117,6 +115,3 @@ let g:template_dir = $HOME . '/.vim/bundle/bliof/templates/'
 let g:user = substitute(system('git config user.name'), '\%x00', '', 'g')
 let g:email = substitute(system('git config user.email'), '\%x00', '', 'g')
 let g:templates_no_autocmd = 0
-
-let g:vimroom_width = 120
-let g:vimroom_sidebar_height = 0

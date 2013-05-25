@@ -41,15 +41,6 @@
 [submodule "vim/bundle/vim-template"]
 	path = vim/bundle/vim-template
 	url = https://github.com/aperezdc/vim-template.git
-[submodule "vim/bundle/vimroom"]
-	path = vim/bundle/vimroom
-	url = https://github.com/mikewest/vimroom
-[submodule "vim/bundle/vim-fuzzyfinder"]
-	path = vim/bundle/vim-fuzzyfinder
-	url = https://github.com/vim-scripts/FuzzyFinder.git
-[submodule "vim/bundle/vim-l9"]
-	path = vim/bundle/vim-l9
-	url = https://github.com/vim-scripts/L9.git
 [submodule "vim/bundle/vim-coffee-script"]
 	path = vim/bundle/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
