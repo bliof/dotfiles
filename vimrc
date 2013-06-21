@@ -25,6 +25,7 @@ set foldmethod=marker
 
 set shiftwidth=4
 set softtabstop=4
+set expandtab
 set backspace=indent,eol,start
 
 " fixes vim and tmux background color problems
@@ -71,11 +72,8 @@ cmap w!! %!sudo tee > /dev/null %
 augroup FileTypeOptions
     autocmd!
 
-    autocmd FileType c,cpp,cs,java,javascript setlocal et
-    autocmd FileType yaml,haml,ruby,coffee setlocal et sw=2 sts=2
-    autocmd FileType vim,sh,perl,python,r setlocal et
-    autocmd FileType html,xhmtl,tt2html setlocal et
-    autocmd FileType xml setlocal et sw=2 sts=2
+    autocmd FileType yaml,haml,ruby,coffee setlocal sw=2 sts=2
+    autocmd FileType xml setlocal sw=2 sts=2
 augroup END
 
 let perl_include_pod = 1
@@ -98,8 +96,8 @@ au InsertLeave * match Error /\s\+$/
 "======================================================================
 
 " opens nerdtree and moves the cursor to the current window
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
+"autocmd VimEnter * NERDTree
+"autocmd VimEnter * wincmd p
 
 let g:miniBufExplMapWindowNavVim = 1
 
