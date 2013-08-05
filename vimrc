@@ -72,7 +72,7 @@ cmap w!! %!sudo tee > /dev/null %
 augroup FileTypeOptions
     autocmd!
 
-    autocmd FileType yaml,haml,ruby,coffee setlocal sw=2 sts=2
+    autocmd FileType yaml,haml,ruby,coffee,eruby setlocal sw=2 sts=2
     autocmd FileType xml setlocal sw=2 sts=2
 augroup END
 
