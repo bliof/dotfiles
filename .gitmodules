@@ -1,9 +1,6 @@
 [submodule "vim/bundle/snipmate"]
 	path = vim/bundle/snipmate
 	url = https://github.com/msanders/snipmate.vim.git
-[submodule "vim/bundle/minibufexpl"]
-	path = vim/bundle/minibufexpl
-	url = https://github.com/fholgado/minibufexpl.vim.git
 [submodule "vim/bundle/vim-notes"]
 	path = vim/bundle/vim-notes
 	url = https://github.com/xolox/vim-notes.git
@@ -47,3 +44,6 @@
 [submodule "vim/bundle/vim-ctrlp"]
 	path = vim/bundle/vim-ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule "vim/bundle/minibufexpl"]
+	path = vim/bundle/minibufexpl
+	url = git@github.com:techlivezheng/vim-plugin-minibufexpl.git
