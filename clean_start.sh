@@ -74,7 +74,7 @@ function change_git_global_ignore() {
 
 create_ln "bashrc" ~/.bashrc
 create_ln "bash_aliases" ~/.bash_aliases
-create_ln "tmux-conf" ~/.tmux-conf
+create_ln "tmux.conf" ~/.tmux.conf
 create_ln "vimrc" ~/.vimrc
 create_ln "vim" ~/.vim
 create_ln "perltidyrc" ~/.perltidyrc
