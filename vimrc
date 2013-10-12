@@ -74,6 +74,7 @@ augroup FileTypeOptions
 
     autocmd FileType yaml,haml,ruby,coffee,eruby setlocal sw=2 sts=2
     autocmd FileType xml setlocal sw=2 sts=2
+    autocmd FileType go setlocal noexpandtab ts=4
 augroup END
 
 let perl_include_pod = 1
