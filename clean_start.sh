@@ -13,8 +13,7 @@
 #
 ######################################################################
 
-
-BASEDIR=$(dirname $0 | xargs readlink -f)
+BASEDIR=$(cd $(dirname $0); pwd -P)
 args=$(getopt f $*)
 force_delete=false
 if [[ $args =~ '-f' ]]; then
