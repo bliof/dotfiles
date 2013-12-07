@@ -5,12 +5,12 @@ endif
 let colors_name="bluelight"
 set background=light
 
-hi Normal       guifg=#444444   guibg=#eeeeee   ctermfg=234    ctermbg=255       gui=none      cterm=none
+hi Normal       guifg=#444444   guibg=white   ctermfg=234    ctermbg=231            gui=none      cterm=none
 
 hi Comment      guifg=#808080   guibg=NONE      ctermfg=240    ctermbg=NONE      gui=none      cterm=none
 
-hi Constant     guifg=#af5f00   guibg=NONE      ctermfg=19    ctermbg=NONE      gui=none      cterm=none
-hi BConstant    guifg=#af5f00   guibg=NONE      ctermfg=19    ctermbg=NONE      gui=bold      cterm=bold
+hi Constant     guifg=#af5f00   guibg=NONE      ctermfg=19     ctermbg=NONE      gui=none      cterm=none
+hi BConstant    guifg=#af5f00   guibg=NONE      ctermfg=19     ctermbg=NONE      gui=bold      cterm=bold
 
 hi Identifier   guifg=#008700   guibg=NONE      ctermfg=17     ctermbg=NONE      gui=none      cterm=none
 hi BIdentifier  guifg=#008700   guibg=NONE      ctermfg=17     ctermbg=NONE      gui=bold      cterm=bold

@@ -20,7 +20,6 @@ set smartindent
 set smarttab
 set complete-=i
 set pastetoggle=<F4>
-set t_Co=256
 set foldmethod=marker
 
 set shiftwidth=4
@@ -33,9 +32,10 @@ if &term =~ '256color'
     set t_ut=
 endif
 
-colorscheme aldmeris
-"colorscheme bluelight
-"set background=light
+set t_Co=256
+colorscheme snowlight
+
+"colorscheme aldmeris
 "colorscheme solarized
 "let g:solarized_termcolors=256
 "let g:solarized_contrast="high"
