@@ -1,4 +1,3 @@
-alias open='xdg-open'
 alias brake='bundle exec rake'
 alias be='bundle exec'
 alias xargs-vim='xargs bash -c '"'"'</dev/tty vim "$@"'"'"' ignoreme'
