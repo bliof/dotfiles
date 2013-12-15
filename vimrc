@@ -52,19 +52,10 @@ vnoremap <s-tab> <gv
 nnoremap <tab> I<tab><esc>
 nnoremap <s-tab> ^i<bs><esc>
 
-"File navigation
-nnoremap <silent> <F1> :bp <CR>
-nnoremap <silent> <F2> :bn <CR>
-imap <F1> <ESC> :bp <CR>
-imap <F2> <ESC> :bn <CR>
 imap <c-h> <ESC> :bp <CR>
 imap <c-l> <ESC> :bn <CR>
 nnoremap <silent> <c-h> :bp <CR>
 nnoremap <silent> <c-l> :bn <CR>
-imap <c-j> <ESC> :bp <CR>
-imap <c-k> <ESC> :bn <CR>
-nnoremap <silent> <c-j> :bp <CR>
-nnoremap <silent> <c-k> :bn <CR>
 nnoremap <F3> :buffers<CR>:buffer<Space>
 
 " Swap the word under the cursor and the cursor stay at the begining of the new word under the cursor
