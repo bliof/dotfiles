@@ -1,4 +1,5 @@
 filetype plugin on
+syntax on
 
 let mapleader=','
 

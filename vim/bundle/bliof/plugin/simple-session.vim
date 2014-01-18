@@ -30,4 +30,3 @@ endfunction
 
 au VimEnter * nested :call LoadSession()
 au BufRead * silent :call SetLastEncoding()
-au BufEnter * silent :syntax on
