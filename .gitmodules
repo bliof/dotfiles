@@ -53,3 +53,6 @@
 [submodule "vim/bundle/snowlight"]
 	path = vim/bundle/snowlight
 	url = git@bitbucket.org:bliof/snowlight.git
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
