@@ -42,6 +42,12 @@ colorscheme snowlight
 "let g:solarized_contrast="high"
 "let g:solarized_visibility="high"
 
+nnoremap <c-a> ^
+inoremap <c-a> <esc>^I
+
+nnoremap <c-e> $
+inoremap <c-e> <esc>$i
+
 nnoremap - o<esc>
 nnoremap _ O<esc>
 
