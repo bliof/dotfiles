@@ -79,8 +79,10 @@ augroup FileTypeOptions
     autocmd!
 
     autocmd FileType yaml,haml,ruby,coffee,eruby setlocal sw=2 sts=2
-    autocmd FileType xml setlocal sw=2 sts=2
+    autocmd FileType xml,html setlocal sw=2 sts=2
     autocmd FileType go setlocal noexpandtab ts=4
+    autocmd FileType go autocmd BufWritePre <buffer> :Fmt
+    autocmd FileType cpp setlocal sw=8 sts=8 ts=8 noet
 augroup END
 
 let perl_include_pod = 1
