@@ -78,11 +78,13 @@ cmap w!! %!sudo tee > /dev/null %
 augroup FileTypeOptions
     autocmd!
 
-    autocmd FileType yaml,haml,ruby,coffee,eruby setlocal sw=2 sts=2
-    autocmd FileType xml,html setlocal sw=2 sts=2
-    autocmd FileType go setlocal noexpandtab ts=4
+    autocmd FileType yaml,haml,ruby,coffee,eruby setlocal sw=2 sts=2 ts=2
+    autocmd FileType xml,html setlocal sw=2 sts=2 ts=2
+    autocmd FileType jade,css,scss setlocal sw=2 sts=2 ts=2
+    autocmd FileType javascript setlocal sw=4 sts=4 ts=4
+    autocmd FileType go setlocal noet sw=4 sts=4 ts=4
     autocmd FileType go autocmd BufWritePre <buffer> :Fmt
-    autocmd FileType cpp setlocal sw=8 sts=8 ts=8 noet
+    autocmd FileType cpp setlocal sw=4 sts=4 ts=4 noet
 augroup END
 
 let perl_include_pod = 1
@@ -115,8 +117,6 @@ let g:SuperTabDefaultCompletionType = "context"
 let g:notes_directory = '~/Documents/notes'
 
 let g:encodingOptions = ['cp1251']
-
-let g:snippets_dir = $HOME . '/.vim/bundle/bliof/snippets/'
 
 let g:template_dir = $HOME . '/.vim/bundle/bliof/templates/'
 let g:user = substitute(system('git config user.name'), '\%x00', '', 'g')
