@@ -8,9 +8,6 @@
 [submodule "vim/bundle/vim-aldmeris"]
 	path = vim/bundle/vim-aldmeris
 	url = https://github.com/veloce/vim-aldmeris.git
-[submodule "vim/bundle/vim-perl"]
-	path = vim/bundle/vim-perl
-	url = https://github.com/petdance/vim-perl.git
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
@@ -62,3 +59,6 @@
 [submodule "vim/bundle/vim-snipmate"]
 	path = vim/bundle/vim-snipmate
 	url = https://github.com/garbas/vim-snipmate.git
+[submodule "vim/bundle/vim-perl"]
+	path = vim/bundle/vim-perl
+	url = https://github.com/vim-perl/vim-perl
