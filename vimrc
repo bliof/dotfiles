@@ -114,7 +114,7 @@ let g:miniBufExplMapWindowNavVim = 1
 
 let g:SuperTabDefaultCompletionType = "context"
 
-let g:notes_directory = '~/Documents/notes'
+let g:notes_directories = ['~/Documents/notes']
 
 let g:encodingOptions = ['cp1251']
 
