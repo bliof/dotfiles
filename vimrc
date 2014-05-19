@@ -78,8 +78,8 @@ cmap w!! %!sudo tee > /dev/null %
 augroup FileTypeOptions
     autocmd!
 
-    autocmd FileType yaml,haml,ruby,coffee,eruby setlocal sw=2 sts=2 ts=2
-    autocmd FileType xml,html setlocal sw=2 sts=2 ts=2
+    autocmd FileType yaml,haml,ruby,coffee setlocal sw=2 sts=2 ts=2
+    autocmd FileType xml,html,eruby setlocal sw=2 sts=2 ts=2
     autocmd FileType jade,css,scss setlocal sw=2 sts=2 ts=2
     autocmd FileType javascript setlocal sw=4 sts=4 ts=4
     autocmd FileType go setlocal noet sw=4 sts=4 ts=4
@@ -117,8 +117,3 @@ let g:SuperTabDefaultCompletionType = "context"
 let g:notes_directories = ['~/Documents/notes']
 
 let g:encodingOptions = ['cp1251']
-
-let g:template_dir = $HOME . '/.vim/bundle/bliof/templates/'
-let g:user = substitute(system('git config user.name'), '\%x00', '', 'g')
-let g:email = substitute(system('git config user.email'), '\%x00', '', 'g')
-let g:templates_no_autocmd = 0
