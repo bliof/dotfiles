@@ -117,3 +117,7 @@ let g:SuperTabDefaultCompletionType = "context"
 let g:notes_directories = ['~/Documents/notes']
 
 let g:encodingOptions = ['cp1251']
+
+" localvimrc
+let g:localvimrc_sandbox = 0
+let g:localvimrc_persistent = 1
