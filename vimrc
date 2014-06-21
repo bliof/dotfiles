@@ -36,12 +36,6 @@ endif
 set t_Co=256
 colorscheme snowlight
 
-"colorscheme aldmeris
-"colorscheme solarized
-"let g:solarized_termcolors=256
-"let g:solarized_contrast="high"
-"let g:solarized_visibility="high"
-
 nnoremap <c-a> ^
 inoremap <c-a> <esc>^I
 
@@ -79,7 +73,7 @@ augroup FileTypeOptions
     autocmd!
 
     autocmd FileType yaml,haml,ruby,coffee setlocal sw=2 sts=2 ts=2
-    autocmd FileType xml,html,eruby setlocal sw=2 sts=2 ts=2
+    autocmd FileType xsd,xml,html,eruby setlocal sw=2 sts=2 ts=2
     autocmd FileType jade,css,scss setlocal sw=2 sts=2 ts=2
     autocmd FileType javascript setlocal sw=4 sts=4 ts=4
     autocmd FileType go setlocal noet sw=4 sts=4 ts=4
@@ -106,14 +100,6 @@ au InsertLeave * match Error /\s\+$/
 " Plugins config
 "======================================================================
 
-" opens nerdtree and moves the cursor to the current window
-"autocmd VimEnter * NERDTree
-"autocmd VimEnter * wincmd p
-
-let g:miniBufExplMapWindowNavVim = 1
-
-let g:SuperTabDefaultCompletionType = "context"
-
 let g:notes_directories = ['~/Documents/notes']
 
 let g:encodingOptions = ['cp1251']
@@ -121,3 +107,26 @@ let g:encodingOptions = ['cp1251']
 " localvimrc
 let g:localvimrc_sandbox = 0
 let g:localvimrc_persistent = 1
+
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+let g:airline_theme = 'lucius'
