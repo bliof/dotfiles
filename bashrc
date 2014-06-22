@@ -34,6 +34,8 @@ setup_color_prompt() {
 
 setup_color_prompt
 
+unset setup_color_prompt
+
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
