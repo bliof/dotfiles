@@ -110,6 +110,7 @@ let g:localvimrc_persistent = 1
 
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
