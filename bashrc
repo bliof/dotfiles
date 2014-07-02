@@ -21,9 +21,9 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
 fi
 
 setup_color_prompt() {
-    local red='\e[38;5;124m'
-    local normal='\e[0m'
-    local bold='\e[1m'
+    local red='\[\e[38;5;124m\]'
+    local normal='\[\e[0m\]'
+    local bold='\[\e[1m\]'
 
     PS1='${debian_chroot:+[$debian_chroot] }'"$bold\u$normal@$red$bold\h$normal:\w\$ "
 
