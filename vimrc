@@ -34,7 +34,12 @@ if &term =~ '256color'
 endif
 
 set t_Co=256
-colorscheme snowlight
+
+if $COLORSCHEME == 'dark'
+    colorscheme aldmeris
+else
+    colorscheme snowlight
+endif
 
 nnoremap <c-a> ^
 inoremap <c-a> <esc>^I
