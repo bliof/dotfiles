@@ -18,6 +18,7 @@ set smartcase
 set autowrite
 set autoindent
 set smartindent
+filetype indent on
 set smarttab
 set complete-=i
 set pastetoggle=<F4>
