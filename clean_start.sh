@@ -20,7 +20,6 @@ if [[ $args =~ '-f' ]]; then
     force_delete=true
 fi
 
-
 function ask_for_confirmation() {
     read -p "$1 [y/N]: " -n 1 -r choice
 
@@ -79,4 +78,3 @@ create_ln "vim" ~/.vim
 create_ln "perltidyrc" ~/.perltidyrc
 
 change_git_global_ignore
-
