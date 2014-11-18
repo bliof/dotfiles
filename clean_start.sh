@@ -76,5 +76,7 @@ create_ln "tmux.conf" ~/.tmux.conf
 create_ln "vimrc" ~/.vimrc
 create_ln "vim" ~/.vim
 create_ln "perltidyrc" ~/.perltidyrc
+create_ln "githelpers" ~/.githelpers
+create_ln "gitconfig" ~/.gitconfig
 
 change_git_global_ignore
