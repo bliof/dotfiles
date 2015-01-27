@@ -52,3 +52,6 @@
 [submodule "vim/bundle/vim-slim"]
 	path = vim/bundle/vim-slim
 	url = https://github.com/slim-template/vim-slim.git
+[submodule "vim/bundle/switch"]
+	path = vim/bundle/switch
+	url = git://github.com/AndrewRadev/switch.vim.git
