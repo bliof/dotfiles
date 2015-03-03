@@ -58,3 +58,6 @@
 [submodule "vim/bundle/vim-emmet"]
 	path = vim/bundle/vim-emmet
 	url = https://github.com/mattn/emmet-vim.git
+[submodule "vim/bundle/vim-startify"]
+	path = vim/bundle/vim-startify
+	url = https://github.com/mhinz/vim-startify.git

@@ -158,3 +158,31 @@ let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
 let g:airline_theme = 'lucius'
+
+let g:ctrlp_reuse_window = 'startify'
+let g:startify_custom_header = map(split(system('fortune -s'), '\n'), '"   ". v:val') + ['', '', '']
+let g:startify_custom_footer = ['', '', '', '   Onward through the mist.']
+let g:startify_list_order = [
+    \ ['   MRU (here):'],
+    \ 'dir',
+    \ ['   MRU:'],
+    \ 'files',
+    \ ['   Sessions:'],
+    \ 'sessions',
+    \ ['   Bookmarks:'],
+    \ 'bookmarks',
+    \ ]
+let g:startify_bookmarks = [
+    \ '~/.vimrc',
+    \ ]
+
+if $COLORSCHEME != 'dark'
+    hi StartifyBracket ctermfg=245
+    hi StartifyFile    ctermfg=24
+    hi StartifyFooter  ctermfg=0
+    hi StartifyHeader  ctermfg=0
+    hi StartifyNumber  ctermfg=0
+    hi StartifyPath    ctermfg=238
+    hi StartifySlash   ctermfg=238
+    hi StartifySpecial ctermfg=24
+endif
