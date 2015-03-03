@@ -87,6 +87,14 @@ augroup FileTypeOptions
     autocmd FileType cpp setlocal sw=4 sts=4 ts=4 noet
 augroup END
 
+augroup SpellCheck
+    autocmd!
+
+    autocmd FileType gitcommit setlocal spell
+    autocmd FileType markdown setlocal spell
+    autocmd FileType text setlocal spell
+augroup END
+
 let perl_include_pod = 1
 let perl_extended_vars = 1
 
@@ -101,8 +109,6 @@ command! -range=% FixWhitespace call <SID>FixWhitespace(<line1>,<line2>)
 
 au InsertEnter * match Error /\s\+\%#\@<!$/
 au InsertLeave * match Error /\s\+$/
-
-autocmd FileType gitcommit setlocal spell
 
 "======================================================================
 " Plugins config
