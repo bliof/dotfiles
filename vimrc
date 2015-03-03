@@ -102,6 +102,8 @@ command! -range=% FixWhitespace call <SID>FixWhitespace(<line1>,<line2>)
 au InsertEnter * match Error /\s\+\%#\@<!$/
 au InsertLeave * match Error /\s\+$/
 
+autocmd FileType gitcommit setlocal spell
+
 "======================================================================
 " Plugins config
 "======================================================================
