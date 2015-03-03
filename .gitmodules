@@ -55,3 +55,6 @@
 [submodule "vim/bundle/switch"]
 	path = vim/bundle/switch
 	url = git://github.com/AndrewRadev/switch.vim.git
+[submodule "vim/bundle/vim-emmet"]
+	path = vim/bundle/vim-emmet
+	url = https://github.com/mattn/emmet-vim.git
