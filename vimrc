@@ -37,8 +37,10 @@ endif
 set t_Co=256
 
 if $COLORSCHEME == 'dark'
+    set background=dark
     colorscheme aldmeris
 else
+    set background=light
     colorscheme snowlight
 endif
 
