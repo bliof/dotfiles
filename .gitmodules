@@ -4,9 +4,6 @@
 [submodule "vim/bundle/vim-aldmeris"]
 	path = vim/bundle/vim-aldmeris
 	url = https://github.com/veloce/vim-aldmeris.git
-[submodule "vim/bundle/tagbar"]
-	path = vim/bundle/tagbar
-	url = https://github.com/majutsushi/tagbar.git
 [submodule "vim/bundle/nerdcommenter"]
 	path = vim/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
