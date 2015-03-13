@@ -188,3 +188,6 @@ if $COLORSCHEME != 'dark'
     hi StartifySlash   ctermfg=238
     hi StartifySpecial ctermfg=24
 endif
+
+nnoremap <F2> :UndotreeToggle<CR>:UndotreeFocus<CR>
+let g:undotree_WindowLayout=2
