@@ -162,8 +162,8 @@ let g:airline_symbols.whitespace = 'Ξ'
 let g:airline_theme = 'lucius'
 
 let g:ctrlp_reuse_window = 'startify'
-let g:startify_custom_header = map(split(system('fortune -s'), '\n'), '"   ". v:val') + ['', '', '']
-let g:startify_custom_footer = ['', '', '', '   Onward through the mist.']
+let g:startify_custom_header = map(split(system('vim --version | head -n 4'), '\n'), '"   ". v:val') + ['', ''] + map(split(system('fortune -s'), '\n'), '"   ". v:val') + ['', '']
+let g:startify_custom_footer = ['', '', '   Onward through the mist.']
 let g:startify_list_order = [
     \ ['   MRU (here):'],
     \ 'dir',
