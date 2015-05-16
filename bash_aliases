@@ -11,7 +11,7 @@ alias be='bundle exec'
 alias xargs-vim='xargs bash -c '"'"'</dev/tty vim "$@"'"'"' ignoreme'
 alias iphone='open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'
 alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
-alias ff='ag --color-line-number "15" --color-match "1;38;5;124" --color-path "1;15"'
+alias ff='ag --color-line-number "15" --color-match "106" --color-path "1;15"'
 
 px() {
     QUERY=$(pgrep -d, $@) || return;
