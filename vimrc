@@ -13,7 +13,6 @@ set backupdir=~/.vim/backup,.
 set directory=~/.vim/backup,.
 set undodir=~/.vim/backup,.
 set undofile
-set number
 set hlsearch
 set incsearch
 set smartcase
