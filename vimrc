@@ -87,7 +87,7 @@ augroup FileTypeOptions
     autocmd FileType javascript setlocal sw=4 sts=4 ts=4
     autocmd FileType go setlocal noet sw=4 sts=4 ts=4
     autocmd FileType go autocmd BufWritePre <buffer> :Fmt
-    autocmd FileType cpp setlocal sw=4 sts=4 ts=4 noet
+    autocmd FileType cpp setlocal sw=4 sts=4 ts=4
 augroup END
 
 augroup SpellCheck
