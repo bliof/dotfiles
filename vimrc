@@ -117,6 +117,11 @@ au InsertLeave * match Error /\s\+$/
 " Plugins config
 "======================================================================
 
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.git|\.hg|\.svn|tmp\/cache)$',
+  \ 'file': '\v\.(exe|so|dll|cache|jpg|gif|png|pdf|woff|ttf|eot|doc|ico)$',
+  \ }
+
 let g:notes_directories = ['~/Documents/notes']
 
 let g:encodingOptions = ['cp1251']
