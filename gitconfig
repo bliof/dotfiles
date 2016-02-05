@@ -3,6 +3,7 @@
 [user]
     name = Aleksandar Ivanov
     email = aivanov92@gmail.com
+    signingkey = 8EB13255
 [color]
     ui = auto
 [push]
