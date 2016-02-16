@@ -10,14 +10,14 @@
     meta = 62 bold
     commit = 28 bold
     frag = 54 bold
-    old = 124 224
-    new = 22 bold 194
+    old = 160
+    new = 34 bold
     whitespace = 160 reverse
 [color "diff-highlight"]
     oldNormal = 160
-    oldHighlight = "124 224"
+    oldHighlight = 124 224
     newNormal = 34
-    newHighlight = "22 bold 194"
+    newHighlight = 22 bold 194
 [pager]
     diff = diff-so-fancy | less --tabs=1,5 -RFX
     show = diff-so-fancy | less --tabs=1,5 -RFX
