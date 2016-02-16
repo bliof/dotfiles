@@ -6,6 +6,21 @@
     signingkey = 8EB13255
 [color]
     ui = auto
+[color "diff"]
+    meta = 62 bold
+    commit = 28 bold
+    frag = 54 bold
+    old = 124 224
+    new = 22 bold 194
+    whitespace = 160 reverse
+[color "diff-highlight"]
+    oldNormal = 160
+    oldHighlight = "124 224"
+    newNormal = 34
+    newHighlight = "22 bold 194"
+[pager]
+    diff = diff-so-fancy | less --tabs=1,5 -RFX
+    show = diff-so-fancy | less --tabs=1,5 -RFX
 [push]
     default = simple
 [pull]
@@ -30,3 +45,9 @@
     ra = !git r --all
     l = "!. ~/.githelpers && pretty_git_log"
     la = !git l --all
+[difftool "sourcetree"]
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+    path =
+[mergetool "sourcetree"]
+    cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+    trustExitCode = true
