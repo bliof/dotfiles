@@ -10,8 +10,10 @@ Plug 'https://github.com/AndrewRadev/switch.vim.git'
 Plug 'https://github.com/bling/vim-airline.git'
 Plug 'https://github.com/embear/vim-localvimrc.git'
 Plug 'https://github.com/jnwhiteh/vim-golang.git'
+Plug 'https://github.com/junegunn/fzf.git', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'https://github.com/junegunn/fzf.vim.git'
 Plug 'https://github.com/junegunn/goyo.vim.git'
+Plug 'https://github.com/junegunn/vim-peekaboo.git'
 Plug 'https://github.com/kchmck/vim-coffee-script.git'
 Plug 'https://github.com/mattn/emmet-vim.git'
 Plug 'https://github.com/mbbill/undotree.git'
@@ -89,7 +91,7 @@ imap <c-h> <ESC> :bp <CR>
 imap <c-l> <ESC> :bn <CR>
 nnoremap <silent> <c-h> :bp <CR>
 nnoremap <silent> <c-l> :bn <CR>
-nnoremap <F3> :buffers<CR>:buffer<Space>
+"nnoremap <F3> :buffers<CR>:buffer<Space>
 
 " Swap the word under the cursor and the cursor stay at the begining of the new word under the cursor
 nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><C-o>:noh<CR>
@@ -146,7 +148,8 @@ set list
 
 set rtp+=~/.fzf
 let g:fzf_layout = { 'down': '~30%' }
-nnoremap <silent> <C-p> :FZF<CR>
+nnoremap <silent> <C-p> :Files<CR>
+nnoremap <F3> :Buffers<CR>
 
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.git|\.hg|\.svn|tmp\/cache|mnesia)$',
