@@ -3,12 +3,33 @@ syntax on
 
 let mapleader=','
 
-runtime bundle/vim-pathogen/autoload/pathogen.vim
+call plug#begin('~/.vim/bundle')
 
-call pathogen#infect()
-call pathogen#helptags()
+Plug 'https://bliof@bitbucket.org/bliof/snowlight.git'
+Plug 'https://github.com/AndrewRadev/switch.vim.git'
+Plug 'https://github.com/bling/vim-airline.git'
+Plug 'https://github.com/embear/vim-localvimrc.git'
+Plug 'https://github.com/jnwhiteh/vim-golang.git'
+Plug 'https://github.com/junegunn/fzf.vim.git'
+Plug 'https://github.com/kchmck/vim-coffee-script.git'
+Plug 'https://github.com/mattn/emmet-vim.git'
+Plug 'https://github.com/mbbill/undotree.git'
+Plug 'https://github.com/mhinz/vim-startify.git'
+Plug 'https://github.com/scrooloose/nerdcommenter.git'
+Plug 'https://github.com/scrooloose/nerdtree.git'
+Plug 'https://github.com/scrooloose/syntastic.git'
+Plug 'https://github.com/slim-template/vim-slim.git'
+Plug 'https://github.com/tpope/vim-fugitive.git'
+Plug 'https://github.com/tpope/vim-rails.git'
+Plug 'https://github.com/tpope/vim-surround.git'
+Plug 'https://github.com/tpope/vim-unimpaired.git'
+Plug 'https://github.com/veloce/vim-aldmeris.git'
+Plug 'https://github.com/vim-airline/vim-airline-themes.git'
+Plug 'https://github.com/vim-perl/vim-perl.git'
 
-set nocompatible
+call plug#end()
+
+"set nocompatible
 set backupdir=~/.vim/backup,.
 set directory=~/.vim/backup,.
 set undodir=~/.vim/backup,.
@@ -110,15 +131,23 @@ endfunction
 " Run :FixWhitespace to remove end of line white space.
 command! -range=% FixWhitespace call <SID>FixWhitespace(<line1>,<line2>)
 
-au InsertEnter * match Error /\s\+\%#\@<!$/
 au InsertLeave * match Error /\s\+$/
+au InsertLeave * match Error /^\t /
+au InsertLeave * match Error /^ \t/
+
+set listchars=
+set list
 
 "======================================================================
 " Plugins config
 "======================================================================
 
+set rtp+=~/.fzf
+let g:fzf_layout = { 'down': '~30%' }
+nnoremap <silent> <C-p> :FZF<CR>
+
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.git|\.hg|\.svn|tmp\/cache)$',
+  \ 'dir':  '\v[\/](\.git|\.hg|\.svn|tmp\/cache|mnesia)$',
   \ 'file': '\v\.(exe|so|dll|cache|jpg|gif|png|pdf|woff|ttf|eot|doc|ico)$',
   \ }
 
