@@ -25,7 +25,7 @@ Plug 'https://github.com/tpope/vim-surround.git'
 Plug 'https://github.com/tpope/vim-unimpaired.git'
 Plug 'https://github.com/veloce/vim-aldmeris.git'
 Plug 'https://github.com/vim-airline/vim-airline-themes.git'
-Plug 'https://github.com/vim-perl/vim-perl.git'
+Plug 'https://github.com/vim-perl/vim-perl.git', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
 
 call plug#end()
 
@@ -45,6 +45,7 @@ set smarttab
 set complete-=i
 set pastetoggle=<F4>
 set foldmethod=marker
+set wildmenu
 
 set shiftwidth=4
 set softtabstop=4
