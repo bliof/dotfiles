@@ -145,9 +145,15 @@ set list
 " Plugins config
 "======================================================================
 
+function! s:find_git_root()
+    return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+endfunction
+
+command! ProjectFiles execute 'Files' s:find_git_root()
+
 set rtp+=~/.fzf
 let g:fzf_layout = { 'down': '~30%' }
-nnoremap <silent> <C-p> :Files<CR>
+nnoremap <silent> <C-p> :ProjectFiles<CR>
 nnoremap <F3> :Buffers<CR>
 
 let g:ctrlp_custom_ignore = {
