@@ -136,9 +136,7 @@ endfunction
 " Run :FixWhitespace to remove end of line white space.
 command! -range=% FixWhitespace call <SID>FixWhitespace(<line1>,<line2>)
 
-au InsertLeave * match Error /\s\+$/
-au InsertLeave * match Error /^\t /
-au InsertLeave * match Error /^ \t/
+autocmd InsertLeave * match Error /\(\s\+$\|\t \| \t\)/
 
 set listchars=
 set list
