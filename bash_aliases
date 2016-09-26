@@ -3,8 +3,9 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias tree='tree -C'
 
-alias ll='ls -l'
-alias la='ls -a'
+alias ll='ls -l --color'
+alias la='ls -a --color'
+alias ls='ls --color'
 
 alias brake='bundle exec rake'
 alias be='bundle exec'
