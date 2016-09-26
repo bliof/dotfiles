@@ -21,6 +21,10 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
 source /usr/share/git-core/contrib/completion/git-prompt.sh
 
 setup_color_prompt() {
