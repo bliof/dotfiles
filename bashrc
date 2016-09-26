@@ -21,6 +21,8 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
+source /usr/share/git-core/contrib/completion/git-prompt.sh
+
 setup_color_prompt() {
     local red='\[\e[38;5;124m\]'
     local normal='\[\e[0m\]'
@@ -48,8 +50,10 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+source $HOME/.rvm/scripts/rvm
 
 export GOPATH=$HOME/go
 PATH=$PATH:$GOPATH/bin
 PATH=$PATH:/usr/local/sbin
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
