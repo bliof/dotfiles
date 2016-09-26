@@ -234,3 +234,5 @@ endif
 
 nnoremap <F2> :UndotreeToggle<CR>:UndotreeFocus<CR>
 let g:undotree_WindowLayout=2
+
+let g:goyo_width=100
