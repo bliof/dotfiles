@@ -30,6 +30,7 @@ Plug 'https://github.com/veloce/vim-aldmeris.git'
 Plug 'https://github.com/vim-airline/vim-airline-themes.git'
 Plug 'https://github.com/vim-perl/vim-perl.git', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
 Plug 'https://github.com/chrisbra/vim-diff-enhanced'
+Plug 'https://github.com/morhetz/gruvbox.git'
 
 call plug#end()
 
@@ -65,7 +66,8 @@ set t_Co=256
 
 if $COLORSCHEME == 'dark'
     set background=dark
-    colorscheme aldmeris
+    colorscheme gruvbox
+    let g:gruvbox_contrast_dark='hard'
 else
     set background=light
     colorscheme snowlight
