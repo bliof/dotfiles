@@ -58,6 +58,8 @@ set softtabstop=4
 set expandtab
 set backspace=indent,eol,start
 
+set termguicolors
+
 " fixes vim and tmux background color problems
 if &term =~ '256color'
     set t_ut=
