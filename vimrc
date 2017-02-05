@@ -31,6 +31,7 @@ Plug 'https://github.com/vim-airline/vim-airline-themes.git'
 Plug 'https://github.com/vim-perl/vim-perl.git', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
 Plug 'https://github.com/chrisbra/vim-diff-enhanced'
 Plug 'https://github.com/morhetz/gruvbox.git'
+Plug 'https://github.com/chrisbra/Colorizer.git'
 
 call plug#end()
 
