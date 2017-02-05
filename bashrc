@@ -1,4 +1,12 @@
 #!/bin/bash
+source $HOME/.rvm/scripts/rvm
+
+export GOPATH=$HOME/go
+PATH=$PATH:$GOPATH/bin
+PATH=$PATH:/usr/local/sbin
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -54,11 +62,3 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
-
-source $HOME/.rvm/scripts/rvm
-
-export GOPATH=$HOME/go
-PATH=$PATH:$GOPATH/bin
-PATH=$PATH:/usr/local/sbin
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
