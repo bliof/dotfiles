@@ -89,6 +89,8 @@ nnoremap _ O<esc>
 vnoremap <tab> >gv
 vnoremap <s-tab> <gv
 
+vnoremap <c-c> "+y <ESC>
+
 " make tab in normal mode ident code
 nnoremap <tab> I<tab><esc>
 nnoremap <s-tab> ^i<bs><esc>
