@@ -7,6 +7,8 @@ PATH=$PATH:/usr/local/sbin
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+#export PATH="$HOME/.cargo/bin:$PATH"
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -34,7 +36,18 @@ if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 
-source /usr/share/git-core/contrib/completion/git-prompt.sh
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+fi
+
+if [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]; then
+    . /usr/share/git-core/contrib/completion/git-prompt.sh
+fi
+
 
 setup_color_prompt() {
     local blue='\[\e[38;5;33m\]'
@@ -51,14 +64,3 @@ setup_color_prompt() {
 setup_color_prompt
 
 unset setup_color_prompt
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
-fi
