@@ -89,14 +89,15 @@ nnoremap _ O<esc>
 vnoremap <tab> >gv
 vnoremap <s-tab> <gv
 
-vnoremap <c-c> "+y <ESC>
+vnoremap <c-c> "+y<ESC>
+inoremap <c-v> <ESC>"+Pa
 
 " make tab in normal mode ident code
 nnoremap <tab> I<tab><esc>
 nnoremap <s-tab> ^i<bs><esc>
 
-imap <c-h> <ESC> :bp <CR>
-imap <c-l> <ESC> :bn <CR>
+inoremap <c-h> <ESC> :bp <CR>
+inoremap <c-l> <ESC> :bn <CR>
 nnoremap <silent> <c-h> :bp <CR>
 nnoremap <silent> <c-l> :bn <CR>
 "nnoremap <F3> :buffers<CR>:buffer<Space>
