@@ -1,8 +1,9 @@
-# ☃
+# ☃🐲☃
 
 * [`.vimrc`](vimrc)
+* [`.tmux.conf`](tmux.conf)
+* [`.bashrc`](bashrc)
 * [`.bash_aliases`](bash_aliases)
-* [`./clean_start.sh`](clean_start.sh)
 
 ```
                                              ``./+ooso++/++/:.`
