@@ -12,6 +12,9 @@ PATH=$PATH:/usr/local/sbin
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# Ignore bash completion of hosts in /etc/hosts
+export COMP_KNOWN_HOSTS_WITH_HOSTFILE=''
+
 TERM='xterm-256color'
 export EDITOR='vim'
 export COLORSCHEME='dark'
