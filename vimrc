@@ -32,6 +32,7 @@ Plug 'https://github.com/vim-perl/vim-perl.git', { 'for': 'perl', 'do': 'make cl
 Plug 'https://github.com/chrisbra/vim-diff-enhanced'
 Plug 'https://github.com/morhetz/gruvbox.git'
 Plug 'https://github.com/chrisbra/Colorizer.git'
+Plug 'https://github.com/rizzatti/dash.vim.git'
 
 call plug#end()
 
@@ -244,3 +245,5 @@ nnoremap <F2> :UndotreeToggle<CR>:UndotreeFocus<CR>
 let g:undotree_WindowLayout=2
 
 let g:goyo_width=100
+
+:nmap <silent> <leader>m <Plug>DashSearch
