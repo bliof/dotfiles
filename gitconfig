@@ -3,7 +3,7 @@
 [user]
     name = Aleksandar Ivanov
     email = aivanov92@gmail.com
-    signingkey = 8EB13255
+    signingkey = DDF0FDAD2CC87446
 [color]
     ui = auto
 [color "diff"]
@@ -46,3 +46,5 @@
     l = "!. ~/.githelpers && pretty_git_log"
     la = !git l --all
     review = !git stash && git fetch origin $1 && (git branch -m $1 tmp-review-$1-$(date +%Y-%m-%d-%H-%M-%S) || :) && git checkout -b $1 origin/$1 && :
+[gpg]
+    program = gpg
