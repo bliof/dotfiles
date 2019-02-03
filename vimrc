@@ -53,6 +53,7 @@ set complete-=i
 set pastetoggle=<F4>
 set foldmethod=marker
 set wildmenu
+set nomodeline
 
 set shiftwidth=4
 set softtabstop=4
