@@ -1,13 +1,17 @@
 #!/bin/bash
-source $HOME/.rvm/scripts/rvm
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+export GPG_TTY=$(tty)
 
 export GOPATH=$HOME/go
-PATH=$PATH:$GOPATH/bin
-PATH=$PATH:/usr/local/sbin
+PATH="$PATH:$GOPATH/bin"
+PATH="/usr/local/bin:$PATH"
+PATH="$PATH:/usr/local/sbin"
+PATH="$PATH:$HOME/.rvm/bin"
 
+[ -f ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-#export PATH="$HOME/.cargo/bin:$PATH"
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -17,7 +21,8 @@ export COMP_KNOWN_HOSTS_WITH_HOSTFILE=''
 
 TERM='xterm-256color'
 export EDITOR='vim'
-export COLORSCHEME='dark'
+export COLORSCHEME='light'
+export LANG='en'
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -35,22 +40,33 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-if [ -f /etc/bashrc ]; then
-    . /etc/bashrc
-fi
+[ -f /etc/bashrc ] && . /etc/bashrc
+[ -f ~/.bash_aliases ] && . ~/.bash_aliases
+[ -f ~/.bash_tokens ] && . ~/.bash_tokens
+[ -f /usr/share/git-core/contrib/completion/git-prompt.sh ] && . /usr/share/git-core/contrib/completion/git-prompt.sh
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
+_git_review ()
+{
+    __git_complete_refs
+}
 
-if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-fi
+# add hook for further expansions
+_git_known_expansions ()
+{
+    # list aliases
+    echo $(git config --name-only --get-regexp alias | sed 's/alias\.//g')
+}
 
-if [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]; then
-    . /usr/share/git-core/contrib/completion/git-prompt.sh
-fi
-
+# modify command list to include expansions
+__git_commands () {
+    if test -n "${GIT_TESTING_COMMAND_COMPLETION:-}"
+    then
+        printf "%s" "${GIT_TESTING_COMMAND_COMPLETION}"
+    else
+        echo "$(git help -a|egrep '^  [a-zA-Z0-9]') $(_git_known_expansions)"
+    fi
+}
 
 setup_color_prompt() {
     local blue='\[\e[38;5;33m\]'
