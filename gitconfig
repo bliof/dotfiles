@@ -45,6 +45,13 @@
     ra = !git r --all
     l = "!. ~/.githelpers && pretty_git_log"
     la = !git l --all
+    d = log --graph --decorate --stat master..
     review = !git stash && git fetch origin $1 && (git branch -m $1 tmp-review-$1-$(date +%Y-%m-%d-%H-%M-%S) || :) && git checkout -b $1 origin/$1 && :
+    nuke-review-tmp = !git branch | grep 'tmp-review' | xargs git branch -D
+    changes = !BRANCH="${1:-$(git branch-name)}" && git diff --name-only $(git merge-base master "$BRANCH") "$BRANCH"
+    branch-name = !git rev-parse --abbrev-ref HEAD
+    mm = !BRANCH="${1:-$(git branch-name)}" && git checkout master && git pull origin master && git checkout "$BRANCH" && git rebase master
 [gpg]
     program = gpg
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/

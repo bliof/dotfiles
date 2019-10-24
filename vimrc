@@ -7,36 +7,45 @@ call plug#begin('~/.vim/bundle')
 
 Plug 'https://bliof@bitbucket.org/bliof/snowlight.git'
 Plug 'https://github.com/AndrewRadev/switch.vim.git'
+Plug 'https://github.com/StanAngeloff/php.vim.git'
+Plug 'https://github.com/benmills/vimux.git'
 Plug 'https://github.com/bling/vim-airline.git'
+Plug 'https://github.com/chrisbra/Colorizer.git'
+Plug 'https://github.com/chrisbra/vim-diff-enhanced'
 Plug 'https://github.com/embear/vim-localvimrc.git'
+Plug 'https://github.com/google/vim-jsonnet.git'
 Plug 'https://github.com/jnwhiteh/vim-golang.git'
 Plug 'https://github.com/junegunn/fzf.git', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'https://github.com/junegunn/fzf.vim.git'
 Plug 'https://github.com/junegunn/goyo.vim.git'
 Plug 'https://github.com/junegunn/vim-peekaboo.git'
 Plug 'https://github.com/kchmck/vim-coffee-script.git'
+Plug 'https://github.com/majutsushi/tagbar.git'
 Plug 'https://github.com/mattn/emmet-vim.git'
 Plug 'https://github.com/mbbill/undotree.git'
 Plug 'https://github.com/mhinz/vim-startify.git'
+Plug 'https://github.com/morhetz/gruvbox.git'
+Plug 'https://github.com/rhysd/devdocs.vim'
 Plug 'https://github.com/scrooloose/nerdcommenter.git'
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/scrooloose/syntastic.git'
+Plug 'https://github.com/sheerun/vim-polyglot.git'
+Plug 'https://github.com/skalnik/vim-vroom.git'
 Plug 'https://github.com/slim-template/vim-slim.git'
+Plug 'https://github.com/terryma/vim-multiple-cursors.git'
 Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/tpope/vim-rails.git'
+Plug 'https://github.com/tpope/vim-repeat.git'
 Plug 'https://github.com/tpope/vim-surround.git'
 Plug 'https://github.com/tpope/vim-unimpaired.git'
 Plug 'https://github.com/veloce/vim-aldmeris.git'
 Plug 'https://github.com/vim-airline/vim-airline-themes.git'
 Plug 'https://github.com/vim-perl/vim-perl.git', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
-Plug 'https://github.com/chrisbra/vim-diff-enhanced'
-Plug 'https://github.com/morhetz/gruvbox.git'
-Plug 'https://github.com/chrisbra/Colorizer.git'
-Plug 'https://github.com/rizzatti/dash.vim.git'
+Plug 'https://github.com/vim-php/tagbar-phpctags.vim.git'
 
 call plug#end()
 
-"set nocompatible
+"set nocdsfgdfsgompatible
 set backupdir=~/.vim/backup,.
 set directory=~/.vim/backup,.
 set undodir=~/.vim/backup,.
@@ -54,6 +63,7 @@ set pastetoggle=<F4>
 set foldmethod=marker
 set wildmenu
 set nomodeline
+set noautochdir
 
 set shiftwidth=4
 set softtabstop=4
@@ -86,6 +96,9 @@ inoremap <c-e> <esc>$i
 
 nnoremap - o<esc>
 nnoremap _ O<esc>
+
+vnoremap <c-c> "-y<ESC>
+inoremap <c-v> <ESC>"+Pa
 
 " make tab in v mode ident code
 vnoremap <tab> >gv
@@ -122,7 +135,6 @@ augroup FileTypeOptions
     autocmd FileType jade,css,scss setlocal sw=2 sts=2 ts=2
     autocmd FileType javascript setlocal sw=4 sts=4 ts=4
     autocmd FileType go setlocal noet sw=4 sts=4 ts=4
-    autocmd FileType go autocmd BufWritePre <buffer> :Fmt
     autocmd FileType cpp setlocal sw=4 sts=4 ts=4
 augroup END
 
@@ -164,7 +176,17 @@ command! ProjectFiles execute 'Files' s:find_git_root()
 set rtp+=~/.fzf
 let g:fzf_layout = { 'down': '~30%' }
 nnoremap <silent> <C-p> :ProjectFiles<CR>
+command! -bang -nargs=* Ag
+  \ call fzf#vim#grep(
+  \   'ag  --nogroup --column --color --color-line-number "15" --color-match "106" --color-path "1;15" '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
+
+noremap <leader>a :Ag! <C-r>=expand('<cword>')<CR><CR>
+
 nnoremap <F3> :Buffers<CR>
+nnoremap <F1> :TagbarToggle<CR>
 
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.git|\.hg|\.svn|tmp\/cache|mnesia)$',
@@ -215,6 +237,7 @@ let g:airline_symbols.whitespace = 'Ξ'
 let g:airline_theme = 'lucius'
 
 let g:ctrlp_reuse_window = 'startify'
+let g:startify_change_to_vcs_root = 1
 let g:startify_custom_header = map(split(system('vim --version | head -n 4'), '\n'), '"   ". v:val') + ['', '', '']
 let g:startify_custom_footer = ['', '', '', '   Onward through the mist.']
 let g:startify_list_order = [
@@ -247,13 +270,26 @@ let g:undotree_WindowLayout=2
 
 let g:goyo_width=100
 
-command! -bang -nargs=* Ag
-  \ call fzf#vim#grep(
-  \   'ag  --nogroup --column --color --color-line-number "15" --color-match "106" --color-path "1;15" '.shellescape(<q-args>), 1,
-  \   <bang>0 ? fzf#vim#with_preview('up:60%')
-  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \   <bang>0)
+function! s:Presentation()
+    set nospell
+    hi Error NONE
+    call goyo#execute(0, 120)
+endfunction
 
-noremap <leader>a :Ag! <C-r>=expand('<cword>')<CR><CR>
+command! Presentation call <SID>Presentation()
 
-:nmap <silent> <leader>m <Plug>DashSearch
+let g:VimuxOrientation="h"
+
+let g:vroom_map_keys=0
+let g:vroom_use_vimux=1
+
+map <unique> <Leader>t :VroomRunTestFile<CR>
+map <unique> <Leader>s :VroomRunNearestTest<CR>
+map <unique> <Leader>l :VroomRunLastTest<CR>
+
+map <Leader>p :VimuxPromptCommand<CR>
+
+nmap <Leader>m <Plug>(devdocs-under-cursor)
+
+vnoremap u <Nop>
+noremap ~ <Nop>
