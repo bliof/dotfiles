@@ -4,14 +4,14 @@ export LANG=en_US.UTF-8
 
 export GPG_TTY=$(tty)
 
+[ -e ~/.rvm/scripts/rvm ] && . ~/.rvm/scripts/rvm
+[ -e ~/.phpbrew/bashrc ]  && . ~/.phpbrew/bashrc
+
 export GOPATH=$HOME/go
 PATH="$PATH:$GOPATH/bin"
 PATH="/usr/local/bin:$PATH"
 PATH="$PATH:/usr/local/sbin"
 PATH="$PATH:$HOME/.rvm/bin"
-
-[ -f ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -40,11 +40,14 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 [ -f /etc/bashrc ] && . /etc/bashrc
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
 [ -f ~/.bash_tokens ] && . ~/.bash_tokens
 [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ] && . /usr/share/git-core/contrib/completion/git-prompt.sh
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+[ -f $(brew --prefix)/etc/bash_completion ] && . $(brew --prefix)/etc/bash_completion
+[ -f ~/.bash_credentials ]  && . ~/.bash_credentials
 
 _git_review ()
 {
@@ -81,5 +84,4 @@ setup_color_prompt() {
 }
 
 setup_color_prompt
-
 unset setup_color_prompt
