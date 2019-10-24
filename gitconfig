@@ -1,6 +1,5 @@
 [core]
     editor = vim
-    excludesfile = /Users/aivanov/local/dotfiles/git-global-ignore
 [user]
     name = Aleksandar Ivanov
     email = aivanov92@gmail.com
