@@ -24,6 +24,7 @@ Plug 'https://github.com/majutsushi/tagbar.git'
 Plug 'https://github.com/mattn/emmet-vim.git'
 Plug 'https://github.com/mbbill/undotree.git'
 Plug 'https://github.com/mhinz/vim-startify.git'
+Plug 'https://github.com/mindriot101/vim-yapf.git'
 Plug 'https://github.com/morhetz/gruvbox.git'
 Plug 'https://github.com/rhysd/devdocs.vim'
 Plug 'https://github.com/scrooloose/nerdcommenter.git'
@@ -136,6 +137,8 @@ augroup FileTypeOptions
     autocmd FileType javascript setlocal sw=4 sts=4 ts=4
     autocmd FileType go setlocal noet sw=4 sts=4 ts=4
     autocmd FileType cpp setlocal sw=4 sts=4 ts=4
+
+    autocmd FileType python autocmd BufWritePre <buffer> :Yapf
 augroup END
 
 augroup SpellCheck
