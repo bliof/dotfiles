@@ -23,6 +23,7 @@ export COMP_KNOWN_HOSTS_WITH_HOSTFILE=''
 TERM='xterm-256color'
 export EDITOR='vim'
 export COLORSCHEME='light'
+export CLICOLOR=1
 export LANG='en'
 
 # don't put duplicate lines or lines starting with space in the history.
