@@ -22,7 +22,7 @@ export COMP_KNOWN_HOSTS_WITH_HOSTFILE=''
 
 TERM='xterm-256color'
 export EDITOR='vim'
-export COLORSCHEME='light'
+export COLORSCHEME='dark'
 export CLICOLOR=1
 export LANG='en'
 
@@ -48,7 +48,7 @@ fi
 [ -f ~/.bash_tokens ] && . ~/.bash_tokens
 [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ] && . /usr/share/git-core/contrib/completion/git-prompt.sh
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
-[ -f $(brew --prefix)/etc/bash_completion ] && . $(brew --prefix)/etc/bash_completion
+command -v brew &> /dev/null && [ -f $(brew --prefix)/etc/bash_completion ] && . $(brew --prefix)/etc/bash_completion
 [ -f ~/.bash_credentials ]  && . ~/.bash_credentials
 
 _git_review ()
