@@ -76,6 +76,7 @@ create_ln "tmux" ~/.tmux
 create_ln "tmux.conf" ~/.tmux.conf
 create_ln "vimrc" ~/.vimrc
 create_ln "vim" ~/.vim
+create_ln "config/nvim" ~/.config/nvim
 create_ln "perltidyrc" ~/.perltidyrc
 create_ln "githelpers" ~/.githelpers
 create_ln "gitconfig" ~/.gitconfig
