@@ -3,7 +3,7 @@
 [user]
     name = Aleksandar Ivanov
     email = aivanov92@gmail.com
-    signingkey = DDF0FDAD2CC87446
+    signingkey = D626A7AB76CBE9D5
 [color]
     ui = auto
 [color "diff"]

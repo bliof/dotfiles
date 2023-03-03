@@ -21,8 +21,13 @@ PATH="$PATH:$HOME/.rvm/bin"
 export COMP_KNOWN_HOSTS_WITH_HOSTFILE=''
 
 TERM='xterm-256color'
-export EDITOR='vim'
-export COLORSCHEME='dark'
+export EDITOR='nvim'
+profile=`echo $ITERM_PROFILE | tr '[:upper:]' '[:lower:]'`
+if [[ "$profile" == *"light"* ]]; then
+    export COLORSCHEME='light'
+else
+    export COLORSCHEME='dark'
+fi
 export CLICOLOR=1
 export LANG='en'
 
@@ -73,17 +78,4 @@ __git_commands () {
     fi
 }
 
-setup_color_prompt() {
-    local blue='\[\e[38;5;33m\]'
-    local normal='\[\e[0m\]'
-    local bold='\[\e[1m\]'
-
-    PS1='${debian_chroot:+[$debian_chroot] }'"$bold\u$normal@$blue$bold\h$normal:\w\$ "
-
-    if [ $(command -v __git_ps1) ]; then
-        PS1='$(__git_ps1 "(%s) ")'"$PS1"
-    fi
-}
-
-setup_color_prompt
-unset setup_color_prompt
+eval "$(starship init bash)"
