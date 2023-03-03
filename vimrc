@@ -5,7 +5,7 @@ let mapleader=','
 
 call plug#begin('~/.vim/bundle')
 
-Plug 'https://bliof@bitbucket.org/bliof/snowlight.git'
+Plug 'https://bitbucket.org/bliof/snowlight.git'
 Plug 'https://github.com/AndrewRadev/switch.vim.git'
 Plug 'https://github.com/StanAngeloff/php.vim.git'
 Plug 'https://github.com/benmills/vimux.git'

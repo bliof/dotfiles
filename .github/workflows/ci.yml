@@ -1,0 +1,35 @@
+on: push
+jobs:
+  test:
+    strategy:
+      matrix:
+        platform: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.platform }}
+    steps:
+    - uses: actions/checkout@v3
+    - uses: rhysd/action-setup-vim@v1
+      with:
+        neovim: true
+
+    - run: ./clean_start.sh -y -f
+
+    - name: Restore cached ~/.vim
+      id: cache-vim-restore
+      uses: actions/cache/restore@v3
+      with:
+        path: ~/.vim/bundle
+        key: ${{ runner.os }}-vim
+
+    - run: nvim --headless +:PlugInstall +:qa!
+
+    - name: Save vim plugins
+      id: cache-vim-save
+      uses: actions/cache/save@v3
+      with:
+        path: ~/.vim/bundle
+        key: ${{ steps.cache-vim-restore.outputs.cache-primary-key }}
+
+    - run: |
+        result="$(nvim --headless +:qa! 2>&1)"
+        echo "$result"
+        [ -z "$result" ]

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 ######################################################################
 # creates symlinks for the files in the repository in the
 # default location of the dotfiles
@@ -13,14 +13,23 @@
 #
 ######################################################################
 
-BASEDIR=$(cd $(dirname $0); pwd -P)
-args=$(getopt f $*)
+BASEDIR="$(cd $(dirname $0); pwd -P)"
+args="$(getopt fy $*)"
 force_delete=false
-if [[ $args =~ '-f' ]]; then
+force_yes=false
+if [[ "$args" =~ '-f' ]]; then
     force_delete=true
+fi
+if [[ "$args" =~ '-y' ]]; then
+    force_yes=true
 fi
 
 function ask_for_confirmation() {
+    if $force_yes; then
+        echo "$1 [y/N]: y"
+        return 0
+    fi
+
     read -p "$1 [y/N]: " -n 1 -r choice
 
     if [[ $choice == "" ]]; then
