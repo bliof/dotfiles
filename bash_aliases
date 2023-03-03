@@ -9,7 +9,7 @@ alias ls='ls'
 
 alias brake='bundle exec rake'
 alias be='bundle exec'
-alias xargs-vim='xargs bash -c '"'"'</dev/tty vim "$@"'"'"' ignoreme'
+alias xargs-vim='xargs bash -c '"'"'</dev/tty nvim "$@"'"'"' ignoreme'
 alias ipad='open -a simulator --args -CurrentDeviceUDID 9570937E-44E2-4134-AB46-332DC6642C43'
 alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
 alias ff='ag --color-line-number "15" --color-match "106" --color-path "1;15"'
@@ -26,6 +26,8 @@ alias tplan='terraform plan -out=my_plan '
 alias tfmt='terraform fmt'
 
 alias reka='rake'
+
+alias wine='wine64'
 
 px() {
     QUERY=$(pgrep -d, $@) || return;

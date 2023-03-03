@@ -24,16 +24,13 @@ Plug 'https://github.com/majutsushi/tagbar.git'
 Plug 'https://github.com/mattn/emmet-vim.git'
 Plug 'https://github.com/mbbill/undotree.git'
 Plug 'https://github.com/mhinz/vim-startify.git'
-Plug 'https://github.com/mindriot101/vim-yapf.git'
 Plug 'https://github.com/morhetz/gruvbox.git'
 Plug 'https://github.com/rhysd/devdocs.vim'
 Plug 'https://github.com/scrooloose/nerdcommenter.git'
-Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/scrooloose/syntastic.git'
 Plug 'https://github.com/sheerun/vim-polyglot.git'
 Plug 'https://github.com/skalnik/vim-vroom.git'
 Plug 'https://github.com/slim-template/vim-slim.git'
-Plug 'https://github.com/terryma/vim-multiple-cursors.git'
 Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/tpope/vim-rails.git'
 Plug 'https://github.com/tpope/vim-repeat.git'
@@ -42,7 +39,6 @@ Plug 'https://github.com/tpope/vim-unimpaired.git'
 Plug 'https://github.com/veloce/vim-aldmeris.git'
 Plug 'https://github.com/vim-airline/vim-airline-themes.git'
 Plug 'https://github.com/vim-perl/vim-perl.git', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
-Plug 'https://github.com/vim-php/tagbar-phpctags.vim.git'
 
 call plug#end()
 
@@ -133,9 +129,10 @@ augroup FileTypeOptions
 
     autocmd FileType yaml,haml,ruby,coffee setlocal sw=2 sts=2 ts=2
     autocmd FileType xsd,xml,html,eruby setlocal sw=2 sts=2 ts=2
-    autocmd FileType jade,css,scss setlocal sw=2 sts=2 ts=2
+    autocmd FileType jade,css,scss,ts,tsx,typescript,typescriptreact setlocal sw=2 sts=2 ts=2
     autocmd FileType javascript setlocal sw=4 sts=4 ts=4
     autocmd FileType go setlocal noet sw=4 sts=4 ts=4
+    autocmd FileType tex setlocal noet sw=4 sts=4 ts=4
     autocmd FileType cpp setlocal sw=4 sts=4 ts=4
 
     autocmd FileType python autocmd BufWritePre <buffer> :Yapf
