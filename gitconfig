@@ -51,6 +51,7 @@
     changes = !BRANCH="${1:-$(git branch-name)}" && git diff --name-only $(git merge-base master "$BRANCH") "$BRANCH"
     branch-name = !git rev-parse --abbrev-ref HEAD
     mm = !BRANCH="${1:-$(git branch-name)}" && git checkout master && git pull origin master && git checkout "$BRANCH" && git rebase master
+    b = for-each-ref --sort=committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)'
 [gpg]
     program = gpg
 [url "ssh://git@github.com/"]
