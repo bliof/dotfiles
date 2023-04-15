@@ -130,7 +130,7 @@ augroup FileTypeOptions
     autocmd FileType yaml,haml,ruby,coffee setlocal sw=2 sts=2 ts=2
     autocmd FileType xsd,xml,html,eruby setlocal sw=2 sts=2 ts=2
     autocmd FileType jade,css,scss,ts,tsx,typescript,typescriptreact setlocal sw=2 sts=2 ts=2
-    autocmd FileType javascript setlocal sw=4 sts=4 ts=4
+    autocmd FileType javascript setlocal sw=2 sts=2 ts=2
     autocmd FileType go setlocal noet sw=4 sts=4 ts=4
     autocmd FileType tex setlocal noet sw=4 sts=4 ts=4
     autocmd FileType cpp setlocal sw=4 sts=4 ts=4
