@@ -49,14 +49,14 @@ function handle_existing() {
         if $force_delete; then
             rm "$1"
         else
-            mv --backup=numbered "$1" "$1.old"
+            mv "$1" "$1.old.$(date +%F)"
         fi
         return
     fi
 
     if [[ -d $1 ]]; then
         if ! $force_delete; then
-            cp -r --backup=numbered "$1" "$1.old"
+            cp -r "$1" "$1.old.$(date +%F)"
         fi
         rm -r "$1"
         return
@@ -64,12 +64,17 @@ function handle_existing() {
 }
 
 function create_ln() {
-    file=$1
-    link=$2
+    file="$1"
+    link="$2"
+    link_dir="$(dirname $link)"
 
     if ask_for_confirmation "Do you want to change $link?"; then
+        if [ ! -d "$link_dir" ]; then
+            mkdir "$link_dir"
+        fi
+
         handle_existing "$link"
-        ln -s "$BASEDIR/$file" $link
+        ln -s "$BASEDIR/$file" "$link"
     fi
 }
 
@@ -86,6 +91,7 @@ create_ln "tmux.conf" ~/.tmux.conf
 create_ln "vimrc" ~/.vimrc
 create_ln "vim" ~/.vim
 create_ln "config/nvim" ~/.config/nvim
+create_ln "config/starship.toml" ~/.config/starship.toml
 create_ln "perltidyrc" ~/.perltidyrc
 create_ln "githelpers" ~/.githelpers
 create_ln "gitconfig" ~/.gitconfig
