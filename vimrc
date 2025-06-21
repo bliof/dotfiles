@@ -40,6 +40,11 @@ Plug 'https://github.com/veloce/vim-aldmeris.git'
 Plug 'https://github.com/vim-airline/vim-airline-themes.git'
 Plug 'https://github.com/vim-perl/vim-perl.git', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
 
+Plug 'https://github.com/nvim-lua/plenary.nvim'
+Plug 'https://github.com/nvim-treesitter/nvim-treesitter'
+Plug 'https://github.com/github/copilot.vim'
+Plug 'https://github.com/olimorris/codecompanion.nvim'
+
 call plug#end()
 
 "set nocdsfgdfsgompatible
@@ -56,7 +61,6 @@ set smartindent
 filetype indent on
 set smarttab
 set complete-=i
-set pastetoggle=<F4>
 set foldmethod=marker
 set wildmenu
 set nomodeline
@@ -68,6 +72,7 @@ set expandtab
 set backspace=indent,eol,start
 
 set termguicolors
+set re=2
 
 " fixes vim and tmux background color problems
 if &term =~ '256color'
@@ -178,7 +183,7 @@ let g:fzf_layout = { 'down': '~30%' }
 nnoremap <silent> <C-p> :ProjectFiles<CR>
 command! -bang -nargs=* Ag
   \ call fzf#vim#grep(
-  \   'ag  --nogroup --column --color --color-line-number "15" --color-match "106" --color-path "1;15" '.shellescape(<q-args>), 1,
+  \   'ag --nogroup --column --color --color-line-number "15" --color-match "106" --color-path "1;15" -- '.shellescape(<q-args>), 1,
   \   <bang>0 ? fzf#vim#with_preview('up:60%')
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)

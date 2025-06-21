@@ -1,9 +1,10 @@
 [core]
-    editor = vim
+    editor = nvim
+    excludesfile = /Users/bliof/local/dotfiles/git-global-ignore
 [user]
     name = Aleksandar Ivanov
     email = aivanov92@gmail.com
-    signingkey = D626A7AB76CBE9D5
+    signingkey = 1404AF30CC6873B8
 [color]
     ui = auto
 [color "diff"]
@@ -45,14 +46,19 @@
     ra = !git r --all
     l = "!. ~/.githelpers && pretty_git_log"
     la = !git l --all
-    d = log --graph --decorate --stat master..
+    default-branch = ![ -f "$(git rev-parse --show-toplevel 2>/dev/null)/.git/refs/heads/main" ] && echo main || echo master
     review = !git stash && git fetch origin $1 && (git branch -m $1 tmp-review-$1-$(date +%Y-%m-%d-%H-%M-%S) || :) && git checkout -b $1 origin/$1 && :
     nuke-review-tmp = !git branch | grep 'tmp-review' | xargs git branch -D
-    changes = !BRANCH="${1:-$(git branch-name)}" && git diff --name-only $(git merge-base master "$BRANCH") "$BRANCH"
+    changes = !BRANCH="${1:-$(git branch-name)}" && git diff --name-only $(git merge-base $(git default-branch) "$BRANCH") "$BRANCH"
     branch-name = !git rev-parse --abbrev-ref HEAD
-    mm = !BRANCH="${1:-$(git branch-name)}" && git checkout master && git pull origin master && git checkout "$BRANCH" && git rebase master
+    mm = !BRANCH="${1:-$(git branch-name)}" && git checkout $(git default-branch) && git pull origin $(git default-branch) && git checkout "$BRANCH" && git rebase $(git default-branch)
+    ba = for-each-ref --sort=committerdate refs/heads/ --format='%(color: red)%(committerdate:short) %(color: cyan)%(refname:short)'
     b = for-each-ref --sort=committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)'
+    fame = !python -m gitfame
+    count-lines = "! git log --author=\"$1\" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf \"added lines: %s, removed lines: %s, total lines: %s\\n\", add, subs, loc }' #"
 [gpg]
     program = gpg
 [url "ssh://git@github.com/"]
     insteadOf = https://github.com/
+[commit]
+    gpgsign = true

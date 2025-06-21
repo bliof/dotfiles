@@ -7,12 +7,16 @@ export GPG_TTY=$(tty)
 
 [ -e ~/.rvm/scripts/rvm ] && . ~/.rvm/scripts/rvm
 [ -e ~/.phpbrew/bashrc ]  && . ~/.phpbrew/bashrc
+[ -e /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
 export GOPATH=$HOME/go
-PATH="$PATH:$GOPATH/bin"
+PATH="$GOPATH/bin:$PATH"
 PATH="/usr/local/bin:$PATH"
-PATH="$PATH:/usr/local/sbin"
-PATH="$PATH:$HOME/.rvm/bin"
+PATH="/usr/local/sbin:$PATH"
+PATH="$HOME/.rvm/bin:$PATH"
+PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export JAVA_HOME=/opt/homebrew/Cellar/openjdk/23.0.2/libexec/openjdk.jdk/Contents/Home
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -22,6 +26,7 @@ export COMP_KNOWN_HOSTS_WITH_HOSTFILE=''
 
 TERM='xterm-256color'
 export EDITOR='nvim'
+alias vim="nvim"
 profile=`echo $ITERM_PROFILE | tr '[:upper:]' '[:lower:]'`
 if [[ "$profile" == *"light"* ]]; then
     export COLORSCHEME='light'
